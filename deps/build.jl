@@ -6,7 +6,8 @@ const forcecompile = get(ENV, "FORCE_COMPILE_ZMQ", "no") == "yes"
 
 # Parse some basic command-line arguments
 const verbose = "--verbose" in ARGS || forcecompile
-const prefix = Prefix(get([a for a in ARGS if a != "--verbose"], 1, joinpath(@__DIR__, "usr")))
+const prefix = Prefix(get([a for a in ARGS if a != "--verbose"], 1, joinpath(@__DIR__, "usr/downloads/src/julia_install")))
+#const prefix = Prefix(get([a for a in ARGS if a != "--verbose"], 1, joinpath(@__DIR__, "usr")))
 products = [
     LibraryProduct(prefix, String["libzmq"], :libzmq),
 ]
